@@ -8,7 +8,9 @@ from drf_api.permissions import IsOwnerOrReadOnly
 
 
 class PostList(APIView):
-    """View to list posts"""
+    """
+    View to list posts
+    """
     serializer_class = PostSerializer
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
@@ -35,7 +37,9 @@ class PostList(APIView):
         )
 
 class PostDetail(APIView):
-    """View to check Post Details"""
+    """
+    View to check Post Details
+    """
     serializer_class = PostSerializer
     permission_classes = [ IsOwnerOrReadOnly]
 

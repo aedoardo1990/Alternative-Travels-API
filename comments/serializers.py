@@ -23,7 +23,7 @@ class CommentSerializer(serializers.ModelSerializer):
             'updated_at', 'content'
         ]
     
-    
+
 class CommentDetailSerializer(CommentSerializer):
     """
     Serializer for the Comment model related to Detail view

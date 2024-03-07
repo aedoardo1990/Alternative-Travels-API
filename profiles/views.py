@@ -8,7 +8,9 @@ from drf_api.permissions import IsOwnerOrReadOnly
 
 
 class ProfileList(APIView):
-    """to view list of profiles"""
+    """
+    to view list of profiles
+    """
     def get(self, request):
         profiles=Profile.objects.all()
         serializer = ProfileSerializer(
@@ -17,7 +19,9 @@ class ProfileList(APIView):
         return Response(serializer.data)
 
 class ProfileDetail(APIView):
-    """to view the detail of a specific profile by pk"""
+    """
+    to view the detail of a specific profile by pk
+    """
     serializer_class = ProfileSerializer
     permission_classes = [IsOwnerOrReadOnly]
 
