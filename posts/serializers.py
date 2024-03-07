@@ -19,7 +19,7 @@ class PostSerializer(serializers.ModelSerializer):
                 'Image width larger than 4096px'
             )
         if value.image.height > 4096:
-            reise serializers.ValidationError(
+            raise serializers.ValidationError(
                 'Image height larger than 4096px'
             )
         return value
