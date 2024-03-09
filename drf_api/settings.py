@@ -62,7 +62,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-aedoardo199-alternative-wqy9fnz53dm.ws-eu108.gitpod.io','alternative-travels.herokuapp.com'
+    '8000-aedoardo199-alternative-wqy9fnz53dm.ws-eu108.gitpod.io',
+    '.herokuapp.com'
 ]
 
 
