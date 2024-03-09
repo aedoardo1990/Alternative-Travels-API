@@ -59,7 +59,7 @@ REST_AUTH = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-aedoardo199-alternative-wqy9fnz53dm.ws-eu108.gitpod.io',
