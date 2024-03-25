@@ -1,9 +1,10 @@
 from rest_framework import serializers
 from .models import Post
 from likes.models import Like
+from tagulous.contrib.drf import TagSerializer
 
 
-class PostSerializer(serializers.ModelSerializer):
+class PostSerializer(TagSerializer, serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source = 'owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source = 'owner.profile.id')
@@ -11,6 +12,7 @@ class PostSerializer(serializers.ModelSerializer):
     like_id = serializers.SerializerMethodField()
     comments_count = serializers.ReadOnlyField()
     likes_count = serializers.ReadOnlyField()
+    tags_count = serializers.IntegerField(read_only=True)
 
     def validate_image(self, value):
         """checks if image bigger than 2MB, width & height larger than 4096 px"""
@@ -49,4 +51,13 @@ class PostSerializer(serializers.ModelSerializer):
             'profile_image', 'created_at', 'updated_at',
             'title', 'content', 'image', 'image_filter',
             'like_id', 'comments_count', 'likes_count',
+            'tags', 'tags_count',
         ]
+
+
+class TagSerializer(serializers.ModelSerializer):
+    """Serializer for Tag model."""
+
+    class Meta:
+        model = Post.tags.tag_model
+        fields = ["id", "name"]

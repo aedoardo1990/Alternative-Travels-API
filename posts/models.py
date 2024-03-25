@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from tagulous.models import TagField
 
 
 class Post(models.Model):
@@ -20,6 +21,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
+    tags = TagField(force_lowercase=True, max_count=15)
     image = models.ImageField(
         upload_to='images/', default='../default_post_g5kn5h', blank=True
     )
