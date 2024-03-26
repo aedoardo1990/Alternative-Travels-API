@@ -5,7 +5,7 @@ from tagulous.models import TagField
 
 class Post(models.Model):
     """
-    Post model related to owner to upload posts with images
+    Model to upload posts with images, tags and geolocation
     """
     image_filter_choices = [
     ('_1977', '1977'), ('brannan', 'Brannan'),
@@ -22,6 +22,8 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)
     tags = TagField(force_lowercase=True, max_count=15)
+    latitude = models.FloatField()
+    longitude = models.FloatField()
     image = models.ImageField(
         upload_to='images/', default='../default_post_g5kn5h', blank=True
     )

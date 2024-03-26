@@ -51,8 +51,16 @@ class PostSerializer(TagSerializer, serializers.ModelSerializer):
             'profile_image', 'created_at', 'updated_at',
             'title', 'content', 'image', 'image_filter',
             'like_id', 'comments_count', 'likes_count',
-            'tags', 'tags_count',
+            'tags', 'tags_count', 'latitude', 'longitude',
         ]
+
+
+class PostDetailSerializer(PostSerializer):
+    """Serializer for Post update view with geolocation. Makes required 
+    fields optionalfor PUT requests."""
+
+    latitude = serializers.FloatField(required=False)
+    longitude = serializers.FloatField(required=False)
 
 
 class TagSerializer(serializers.ModelSerializer):
