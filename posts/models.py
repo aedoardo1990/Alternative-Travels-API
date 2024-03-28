@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from tagulous.models import TagField
+from cloudinary_storage.storage import VideoMediaCloudinaryStorage
+from cloudinary_storage.validators import validate_video
 
 
 class Post(models.Model):
@@ -25,7 +27,9 @@ class Post(models.Model):
     latitude = models.FloatField()
     longitude = models.FloatField()
     image = models.FileField(
-        upload_to='images/', default='../default_post_g5kn5h', blank=True
+        upload_to='videos/',
+        blank=True, storage=VideoMediaCloudinaryStorage(),
+        validators=[validate_video]
     )
     image_filter = models.CharField(
         max_length=32, choices=image_filter_choices, default='normal'
