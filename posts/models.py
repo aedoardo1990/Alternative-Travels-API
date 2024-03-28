@@ -1,8 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from tagulous.models import TagField
-from cloudinary_storage.storage import VideoMediaCloudinaryStorage
-from cloudinary_storage.validators import validate_video
+from cloudinary.models import CloudinaryField
 
 
 class Post(models.Model):
@@ -26,11 +25,7 @@ class Post(models.Model):
     tags = TagField(force_lowercase=True, max_count=15)
     latitude = models.FloatField()
     longitude = models.FloatField()
-    image = models.FileField(
-        upload_to='videos/',
-        blank=True, storage=VideoMediaCloudinaryStorage(),
-        validators=[validate_video]
-    )
+    image = CloudinaryField(resource_type='raw')
     image_filter = models.CharField(
         max_length=32, choices=image_filter_choices, default='normal'
     )
