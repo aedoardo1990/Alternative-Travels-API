@@ -24,7 +24,7 @@ class Post(models.Model):
     tags = TagField(force_lowercase=True, max_count=15)
     latitude = models.FloatField()
     longitude = models.FloatField()
-    image = models.ImageField(
+    image = models.FileField(
         upload_to='images/', default='../default_post_g5kn5h', blank=True
     )
     image_filter = models.CharField(
