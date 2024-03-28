@@ -52,6 +52,7 @@ class PostSerializer(TagSerializer, serializers.ModelSerializer):
             'title', 'content', 'image', 'image_filter',
             'like_id', 'comments_count', 'likes_count',
             'tags', 'tags_count', 'latitude', 'longitude',
+            'video'
         ]
 
 
