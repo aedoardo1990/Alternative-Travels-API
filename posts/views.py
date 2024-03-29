@@ -3,7 +3,6 @@ from rest_framework import permissions, generics, filters
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_api.permissions import IsOwnerOrReadOnly
 from .models import Post
-from notifications.models import Notification
 from .serializers import PostSerializer, TagSerializer, PostDetailSerializer
 
 
@@ -57,14 +56,6 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
         likes_count = Count('likes', distinct=True),
         tags_count=Count("tags", distinct=True),
     ).order_by('-created_at')
-
-    def perform_update(self, serializer):
-        current_user = User.objects.get(id=self.request.user.id)
-        Notification.objects.create(type="likedpost", user=self.owner,
-                                    owner=self.owner, acting_user=current_user)
-        serializer.validated_data.update({'notifications': [current_user]})
-        return super().perform_update(serializer)
-
 
 class TagList(generics.ListAPIView):
     """Lists all tags"""
