@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from posts.models import Post
-from marketplace.models import Marketplace
 
 
 class Like(models.Model):
@@ -12,14 +11,11 @@ class Like(models.Model):
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name ='likes')
-    marketplace = models.ForeignKey(Marketplace, on_delete=models.CASCADE, related_name ='likes')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering=['-created_at']
         unique_together=['owner', 'post']
-        unique_together=['owner', 'marketplace']
     
     def __str__(self):
         return f"{self.post} from {self.owner}"
-        return f"{self.marketplace} from {self.owner}"

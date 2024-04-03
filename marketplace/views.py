@@ -14,8 +14,7 @@ class MarketplaceList(generics.ListCreateAPIView):
         permissions.IsAuthenticatedOrReadOnly
     ]
     queryset = Marketplace.objects.annotate(
-        comments_count = Count('comment', distinct=True),
-        likes_count = Count('likes', distinct=True),
+        marketplace = Count('owner__marketplace', distinct=True),
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
@@ -23,9 +22,7 @@ class MarketplaceList(generics.ListCreateAPIView):
         DjangoFilterBackend
     ]
     ordering_fields = [
-        'comments_count',
-        'likes_count',
-        'likes__created_at'
+        'marketplace_count',
     ]
     search_fields = [
         'owner__username',
@@ -44,6 +41,5 @@ class MarketplaceDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = MarketplaceDetailSerializer
     permission_classes = [ IsOwnerOrReadOnly]
     queryset = Marketplace.objects.annotate(
-        comments_count = Count('comment', distinct=True),
-        likes_count = Count('likes', distinct=True),
+        marketplace = Count('owner__marketplace', distinct=True),
     ).order_by('-created_at')
