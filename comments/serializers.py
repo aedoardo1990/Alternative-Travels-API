@@ -29,7 +29,7 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'post', 'created_at',
-            'updated_at', 'content', 'marketplace'
+            'updated_at', 'content',
         ]
     
 
@@ -38,4 +38,3 @@ class CommentDetailSerializer(CommentSerializer):
     Serializer for the Comment model related to Detail view
     """
     post = serializers.ReadOnlyField( source = 'post.id')
-    marketplace = serializers.ReadOnlyField( source = 'marketplace.id')
