@@ -17,7 +17,7 @@ class CommentList(generics.ListCreateAPIView):
     ]
     # to get all the comments associated with a given post
     filterset_fields = [
-        'post',
+        'post', 'marketplace',
     ]
 
     def perform_create(self, serializer):
