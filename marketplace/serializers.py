@@ -52,3 +52,13 @@ class MarketplaceSerializer(serializers.ModelSerializer):
             'price', 'status', 'condition', 'details',
             'address', 'contact_number', 'email'
         ]
+
+
+class MarketplaceDetailSerializer(MarketplaceSerializer):
+    """Serializer for Marketplace update view. Makes required 
+    fields optional for PUT requests."""
+
+    price = models.FloatField(required=False)
+    status = models.IntegerField(required=False)
+    condition = models.CharField(required=False)
+    details = models.TextField(required=False)
