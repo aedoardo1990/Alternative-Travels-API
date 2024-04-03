@@ -34,12 +34,6 @@ class MarketplaceList(generics.ListCreateAPIView):
         'condition',
         'price',
     ]
-    # to filter posts 1) user is following, 2) posts user liked, 3) posts owned by a user
-    filterset_fields = [
-        'owner__followed__owner__profile',
-        'likes__owner__profile',
-        'owner__profile'
-    ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
