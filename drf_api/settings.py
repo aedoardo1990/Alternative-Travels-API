@@ -94,6 +94,7 @@ INSTALLED_APPS = [
     'likes',
     'followers',
     'marketplace',
+    'loves',
 ]
 
 # tagulous settings:
