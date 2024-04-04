@@ -1,8 +1,4 @@
 from django.contrib import admin
-from .models import Marketplace, Condition, Status
+from .models import Marketplace
 
 admin.site.register(Marketplace)
-
-admin.site.register(Condition)
-
-admin.site.register(Status)

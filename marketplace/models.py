@@ -2,30 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Status(models.Model):
-    """
-    Status model to create choice Available/Sold in Marketplace model
-    """
-    title = models.CharField(max_length=200, unique=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return f"{self.title}"
-
-
-class Condition(models.Model):
-    """
-    Condition model to create choice new/used/used like new in Marketplace model
-    """
-    title = models.CharField(max_length=200, unique=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return f"{self.title}"
-
-
 class Marketplace(models.Model):
     """
     Model to post products to post items to sell on the Marketplace
@@ -44,8 +20,8 @@ class Marketplace(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     price = models.FloatField()
-    status = models.ForeignKey(Status, on_delete=models.CASCADE)
-    condition = models.ForeignKey(Condition, on_delete=models.CASCADE)
+    status = models.TextField(max_length=20)
+    condition = models.TextField(max_length=20)
     details = models.TextField(blank=True)
     image = models.ImageField(
         upload_to='images/',
@@ -53,7 +29,7 @@ class Marketplace(models.Model):
         blank=True
     )
     address = models.CharField(max_length=255)
-    contact_number = models.IntegerField()
+    contact_number = models.CharField(max_length=12)
     email = models.EmailField()
     image_filter = models.CharField(
         max_length=32, choices=image_filter_choices, default='normal'
