@@ -1,7 +1,29 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-STATUS = ((0, "Available"), (1, "Sold"))
+
+class Status(models.Model):
+    """
+    Status model to create choice Available/Sold in Marketplace model
+    """
+    title = models.CharField(max_length=200, unique=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+
+class Condition(models.Model):
+    """
+    Condition model to create choice new/used/used like new in Marketplace model
+    """
+    title = models.CharField(max_length=200, unique=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title}"
 
 
 class Marketplace(models.Model):
@@ -22,8 +44,8 @@ class Marketplace(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
     price = models.FloatField()
-    status = models.IntegerField(choices=STATUS, default=0)
-    condition = models.CharField(max_length=255)
+    status = models.ForeignKey(Status, on_delete=models.CASCADE)
+    condition = models.ForeignKey(Condition, on_delete=models.CASCADE)
     details = models.TextField(blank=True)
     image = models.ImageField(
         upload_to='images/',
