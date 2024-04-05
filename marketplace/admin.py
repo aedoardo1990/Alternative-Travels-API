@@ -15,5 +15,5 @@ class MarketplaceAdmin(admin.ModelAdmin):
         'address',
         'contact_number',
         'email', 
-        'price_with_EUR'
+        'price'
         ]
