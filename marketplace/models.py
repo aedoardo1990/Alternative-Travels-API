@@ -19,7 +19,7 @@ class Marketplace(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
-    price = models.FloatField()
+    price = models.DecimalField(max_digits=8, decimal_places=2)
     status = models.TextField(max_length=20)
     condition = models.TextField(max_length=20)
     details = models.TextField(blank=True)
@@ -34,6 +34,10 @@ class Marketplace(models.Model):
     image_filter = models.CharField(
         max_length=32, choices=image_filter_choices, default='normal'
     )
+
+    @property
+    def price_with_EUR(self):
+        return f'€ {self.price}'
 
     class Meta:
         ordering = ['-created_at']
