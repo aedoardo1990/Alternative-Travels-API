@@ -7,10 +7,10 @@ from .serializers import LikeSerializer
 class LikeList(generics.ListCreateAPIView):
     """
     view to create like on a post
-    """ 
-    permissions_classes=[permissions.IsAuthenticatedOrReadOnly]
-    serializer_class=LikeSerializer
-    queryset=Like.objects.all()
+    """
+    permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
+    serializer_class = LikeSerializer
+    queryset = Like.objects.all()
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

@@ -6,14 +6,14 @@ class LikeSerializer(serializers.ModelSerializer):
     """
     Serializer for Like Model
     """
-    owner=serializers.ReadOnlyField(source='owner.username')
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Like
         fields = [
             'id', 'owner', 'post', 'created_at',
         ]
-    
+
     def create(self, validated_data):
         try:
             return super().create(validated_data)
