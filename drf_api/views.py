@@ -15,7 +15,7 @@ class CustomUserDetailsView(UserDetailsView):
 @api_view()
 def root_route(request):
     return Response({
-        'message': 'Welcome to the Abandoned Network!'
+        'message': 'Welcome to Alternative Travels API!'
     })
 
 

@@ -1,39 +1,81 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Alternative Travels API
 
-Welcome,
+Welcome to Alternative Travels API set up using Django REST Framework for the Alternative Travels front-end application, a social media for sharing images, videos of alternative travels with the help of geolocation data and tags. The social media is provided as well with a marketplace section with rare products found by the users during their trips.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Here below the links to the API and the Frontend:
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+<strong>Backend</strong>
+💻 [Live link] (https://alternative-travels-debb28d8ca03.herokuapp.com/)
 
-## Codeanywhere Reminders
+<strong>Frontend</strong>
+[Repository here] (https://github.com/aedoardo1990/alternative-travels/)
+[Live website here] (https://alternative-travel-54fe13e24a2a.herokuapp.com/)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
 
-`python3 -m http.server`
+## Table of Contents
+  - [User Stories](#user-stories)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+### User Stories
 
-`http_server`
+The back-end section of the project focuses on the administration side and covers the user stories from the point of view of a developer and/or superuser. The User Stories are divided into the following categories:
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+#### 1 - Login and Registration
+- As a developer I want to access an API endpoint that allows users to register by providing their username and password
+- As a developer I want to have a user profile to be automatically created, when a new user signs up
+- As a developer I want to access an API endpoint that allows users to log in, obtain an authentication token, and access user-specific content
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+#### 2 - Profiles
+- As a developer I want to be able to create, read, update, and delete user profiles via the API
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### 3 - Posts with Images or Videos
+- As a developer I want to be able to create, read, update, and delete posts with images about travels
+- As a developer I want uploaded images to not exceed a size format limit
+- As a developer I want to be able to create, update and delete post with videos about travels
+- As a developer I want uploaded videos to be automatically converted to a consistent format, trimmed and compressed if they exceed a specific file size
 
-To log into the Heroku toolbelt CLI:
+#### 4 - Comments
+- As a developer I want to have access for creating, reading, updating, and deleting comments
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#### 5 - Likes
+- As a developer I want to have access for creating, reading and deleting likes
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+#### 6 - Marketplace
+- As a developer I want to be able to create, read, update and delete posts about products to be sold on the marketplace section of the site
 
----
+#### 7 - Likes and Comments of the Marketplace (apps are called Loves and Opinions)
+- As a developer I want to have access for creating, reading, updating, and deleting comments and likes as well under the posts of the marketplace
 
-Happy coding!
+#### 8 - Followers
+- As a developer I want to have access for creating, reading and deleting follow relationships between users
+
+#### 9 - Tags
+- As a developer I want to posts to have a tag field, so that users can tag their created posts (valid just for normal Posts and not those in the Marketplace)
+- As a developer I want to display a list of tags of all the users
+
+#### 10 - Search and Filter
+- As a developer I want to have a functionality for filtering and sorting results, in order to have more control over what data to display to the user
+
+#### 11 - Geolocation
+- As a developer I want to have the possibility to add a geolocation for each post so that users can create posts with a geolocation and update it if necessary (valid just for normal Posts and not those in the Marketplace)
+
+
+### Data Models
+
+I have created the following models for the Alternative Travels API
+
+| Models | Scope |
+| :---------------------------------: | :------------------------------:|
+| Profiles | to create, update, store and delete profile data |
+| Posts | to create posts with images or videos, with geolocation and tag |
+| Comments | to make comments about the posts |
+| Likes | to like posts |
+| Followers | to follow other users and be updated about their posts |
+| Marketplace | to post products to sell |
+| Opinions | to make comments about the posts of products on sale |
+| Loves | to like posts of products on sale |
+
+The relationships between the models is summarized in the followed entity relationship diagram:
+
+
+
