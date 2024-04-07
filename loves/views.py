@@ -7,10 +7,10 @@ from .serializers import LoveSerializer
 class LoveList(generics.ListCreateAPIView):
     """
     view to create put to "love"/like a post
-    """ 
-    permissions_classes=[permissions.IsAuthenticatedOrReadOnly]
-    serializer_class=LoveSerializer
-    queryset=Love.objects.all()
+    """
+    permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
+    serializer_class = LoveSerializer
+    queryset = Love.objects.all()
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

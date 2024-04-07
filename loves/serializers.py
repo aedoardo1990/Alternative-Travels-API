@@ -6,14 +6,14 @@ class LoveSerializer(serializers.ModelSerializer):
     """
     Serializer for Love Model
     """
-    owner=serializers.ReadOnlyField(source='owner.username')
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Love
         fields = [
             'id', 'owner', 'marketplace', 'created_at',
         ]
-    
+
     def create(self, validated_data):
         try:
             return super().create(validated_data)

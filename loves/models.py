@@ -11,12 +11,14 @@ class Love(models.Model):
     the same post on the marketplace twice.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    marketplace = models.ForeignKey(Marketplace, on_delete=models.CASCADE, related_name ='loves')
+    marketplace = models.ForeignKey(
+        Marketplace, on_delete=models.CASCADE, related_name='loves'
+        )
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering=['-created_at']
-        unique_together=['owner', 'marketplace']
-    
+        ordering = ['-created_at']
+        unique_together = ['owner', 'marketplace']
+
     def __str__(self):
         return f"{self.marketplace} from {self.owner}"
