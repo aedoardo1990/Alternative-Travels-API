@@ -5,11 +5,13 @@ Welcome to Alternative Travels API set up using Django REST Framework for the Al
 Here below the links to the API and the Frontend:
 
 <strong>Backend</strong>
-💻 [Live link] (https://alternative-travels-debb28d8ca03.herokuapp.com/)
+
+[Live link](https://alternative-travels-debb28d8ca03.herokuapp.com/)
 
 <strong>Frontend</strong>
-[Repository here] (https://github.com/aedoardo1990/alternative-travels/)
-[Live website here] (https://alternative-travel-54fe13e24a2a.herokuapp.com/)
+
+[Repository here](https://github.com/aedoardo1990/alternative-travels/)
+[Live website here](https://alternative-travel-54fe13e24a2a.herokuapp.com/)
 
 
 ## Table of Contents
@@ -20,43 +22,43 @@ Here below the links to the API and the Frontend:
 
 The back-end section of the project focuses on the administration side and covers the user stories from the point of view of a developer and/or superuser. The User Stories are divided into the following categories:
 
-#### 1 - Login and Registration
+#### Login and Registration
 - As a developer I want to access an API endpoint that allows users to register by providing their username and password
 - As a developer I want to have a user profile to be automatically created, when a new user signs up
 - As a developer I want to access an API endpoint that allows users to log in, obtain an authentication token, and access user-specific content
 
-#### 2 - Profiles
+#### Profiles
 - As a developer I want to be able to create, read, update, and delete user profiles via the API
 
-#### 3 - Posts with Images or Videos
+#### Posts with Images or Videos
 - As a developer I want to be able to create, read, update, and delete posts with images about travels
 - As a developer I want uploaded images to not exceed a size format limit
 - As a developer I want to be able to create, update and delete post with videos about travels
 - As a developer I want uploaded videos to be automatically converted to a consistent format, trimmed and compressed if they exceed a specific file size
 
-#### 4 - Comments
+#### Comments
 - As a developer I want to have access for creating, reading, updating, and deleting comments
 
-#### 5 - Likes
+#### Likes
 - As a developer I want to have access for creating, reading and deleting likes
 
-#### 6 - Marketplace
+#### Marketplace
 - As a developer I want to be able to create, read, update and delete posts about products to be sold on the marketplace section of the site
 
-#### 7 - Likes and Comments of the Marketplace (apps are called Loves and Opinions)
+#### Likes and Comments of the Marketplace (apps are called Loves and Opinions)
 - As a developer I want to have access for creating, reading, updating, and deleting comments and likes as well under the posts of the marketplace
 
-#### 8 - Followers
+#### Followers
 - As a developer I want to have access for creating, reading and deleting follow relationships between users
 
-#### 9 - Tags
+#### Tags
 - As a developer I want to posts to have a tag field, so that users can tag their created posts (valid just for normal Posts and not those in the Marketplace)
 - As a developer I want to display a list of tags of all the users
 
-#### 10 - Search and Filter
+#### Search and Filter
 - As a developer I want to have a functionality for filtering and sorting results, in order to have more control over what data to display to the user
 
-#### 11 - Geolocation
+#### Geolocation
 - As a developer I want to have the possibility to add a geolocation for each post so that users can create posts with a geolocation and update it if necessary (valid just for normal Posts and not those in the Marketplace)
 
 
@@ -66,6 +68,7 @@ I have created the following models for the Alternative Travels API
 
 | Models | Scope |
 | :---------------------------------: | :------------------------------:|
+| User | the Django standard User model |
 | Profiles | to create, update, store and delete profile data |
 | Posts | to create posts with images or videos, with geolocation and tag |
 | Comments | to make comments about the posts |
@@ -75,7 +78,9 @@ I have created the following models for the Alternative Travels API
 | Opinions | to make comments about the posts of products on sale |
 | Loves | to like posts of products on sale |
 
-The relationships between the models is summarized in the followed entity relationship diagram:
+The relationships between the models is summarized in the followed entity relationship diagram.
+
+![Diagram](assets/readme/diagram-database.png)
 
 
 
