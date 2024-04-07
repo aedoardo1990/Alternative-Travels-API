@@ -470,8 +470,59 @@ Each user story has a level of prioritisation using the MoSCoW method. The 3 dif
 
 ## Bugs
 
+### Unfixed Bugs
+
+#### Not able to login into account in REST Framework format
+
+Since I changed the code of the API for deploying the site, if I change DEBUG to True and remove JSON format option from settings.py, when I try to log in, I am not redirected to the user page. The page will look as in the image below. 
+
+![login](assets/readme/login.png)
+
+However, via the Admin Tab I have full CRUD as Superuser/Developer. Admin tab is accessible at https://8000-aedoardo199-alternative-anz3oyksrix.ws-eu110.gitpod.io/admin/
 
 
+## Technologies Used
+
+### Languages
+
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Provides the functionality for the DRF backend framework.
+
+
+### Frameworks and Software
+
+* [Django Rest Framework](https://www.django-rest-framework.org/) - Framework for building web API's.
+* [PEP8 Linter](https://pep8ci.herokuapp.com/) - Tool provided by Code Institute to check the Python code against some of the style conventions in PEP 8.
+* [Github](https://github.com/) - Used to host the repository, store the commit history and manage the Kanban board containing the user stories.
+* [Heroku](https://en.wikipedia.org/wiki/Heroku) - Cloud platform used to deploy the application
+* [Cloudinary](https://cloudinary.com/) - Platform hosting image and video files for the project.
+* [Gitpod](https://gitpod.io/workspaces) - Cloud development environment.
+
+
+### Libraries
+
+The libraries used in this project are located in the requirements.txt. Here below a list of all the libraries. 
+
+- [asgiref](https://pypi.org/project/asgiref/) - ASGI is a standard for Python asynchronous web apps and servers to communicate with each other, and positioned as an asynchronous successor to WSGI.
+- [cloudinary](https://pypi.org/project/cloudinary/) - The Cloudinary Python SDK allows to easily integrate your application with Cloudinary.
+- [dj-database-url](https://pypi.org/project/dj-database-url/0.5.0/) - to utilize the inspired DATABASE_URL environment variable to configure the Django application.
+- [dj-rest-auth](https://pypi.org/project/dj-rest-auth/) - For handling authentication securely in Django Rest Framework.
+- [Django](https://pypi.org/project/Django/) - high-level Python web framework.
+- [django-allauth](https://pypi.org/project/django-allauth/) - Set of Django applications addressing authentication, registration, account management and third party (social) account authentication.
+- [django-cloudinary-storage](https://pypi.org/project/django-cloudinary-storage/) - Django package that facilitates integration with Cloudinary by implementing Django Storage API.
+- [django-cors-headers](https://pypi.org/project/django-cors-headers/) - A Django App that adds Cross-Origin Resource Sharing (CORS) headers to responses. This allows in-browser requests to your Django application from other origins.
+- [django-filter](https://pypi.org/project/django-filter/) - Django application allowing users to declaratively add dynamic QuerySet filtering from URL parameters.
+- [django-rest-framework](https://pypi.org/project/djangorestframework/) - web-browsable Web APIs.
+- [djangorestframework-simplejwt](https://pypi.org/project/djangorestframework-simplejwt/) - JSON Web Token authentication plugin for the Django REST Framework.
+- [gunicorn](https://pypi.org/project/gunicorn/) - Gunicorn ‘Green Unicorn’ is a Python WSGI HTTP Server for UNIX. It’s a pre-fork worker model ported from Ruby’s Unicorn project. The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resource usage, and fairly speedy.
+- [oauthlib](https://pypi.org/project/oauthlib/) - Framework which implements the logic of OAuth1 or OAuth2 without assuming a specific HTTP request object or web framework.
+- [pillow](https://pypi.org/project/Pillow/8.2.0/) - To add image processing capabilities to the Python interpreter.
+- [psycopg2](https://pypi.org/project/psycopg2/) - PostgreSQL database adapter for the Python programming language.
+- [PyJWT](https://pypi.org/project/PyJWT/) - Python implementation of RFC 7519.
+- [python3-openid](https://pypi.org/project/python3-openid/) - OpenID support for modern servers and consumers.
+- [pytz](https://pypi.org/project/pytz/) - Set of Python packages to support use of the OpenID decentralized identity system in your application, update to Python 3
+- [requests-oauhlib](https://pypi.org/project/requests-oauthlib/) - P    rovides first-class OAuth library support for Requests.
+- [sqlparse](https://pypi.org/project/sqlparse/) - Non-validating SQL parser for Python. It provides support for parsing, splitting and formatting SQL statements.
+- [django-tagulous](https://django-tagulous.readthedocs.io/en/latest/) - Tagging library for Django.
 
 
 
