@@ -332,7 +332,7 @@ Each user story has a level of prioritisation using the MoSCoW method. The 3 dif
 
 #### LIKES
 - apps.py
-![PEP8 Validation](assets/readme/likes-apps)
+![PEP8 Validation](assets/readme/likes-apps.png)
 
 - serializers.py 
 ![PEP8 Validation](assets/readme/serializers-likes.png)
