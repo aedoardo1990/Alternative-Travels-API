@@ -5,17 +5,18 @@ from tagulous.contrib.drf import TagSerializer
 
 
 class PostSerializer(TagSerializer, serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source = 'owner.username')
+    owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
-    profile_id = serializers.ReadOnlyField(source = 'owner.profile.id')
-    profile_image = serializers.ReadOnlyField(source = 'owner.profile.image.url')
+    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
+    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     like_id = serializers.SerializerMethodField()
     comments_count = serializers.ReadOnlyField()
     likes_count = serializers.ReadOnlyField()
     tags_count = serializers.IntegerField(read_only=True)
 
     def validate_image(self, value):
-        """checks if image bigger than 2MB, width & height larger than 4096 px"""
+        """checks if image bigger than 2MB, width & height larger than
+        4096 px"""
         if value.size > 1024 * 1024 * 2:
             raise serializers.ValidationError(
                 'Image size larger than 2MB'
@@ -29,7 +30,7 @@ class PostSerializer(TagSerializer, serializers.ModelSerializer):
                 'Image height larger than 4096px'
             )
         return value
-    
+
     def validate_video(self, value):
         if value.size > 1024 * 1024 * 60:
             raise serializers.ValidationError(
@@ -50,7 +51,7 @@ class PostSerializer(TagSerializer, serializers.ModelSerializer):
             # print(like_post)
             return like.id if like else None
         return None
-    
+
     class Meta:
         model = Post
         fields = [
@@ -64,7 +65,7 @@ class PostSerializer(TagSerializer, serializers.ModelSerializer):
 
 
 class PostDetailSerializer(PostSerializer):
-    """Serializer for Post update view with geolocation. Makes required 
+    """Serializer for Post update view with geolocation. Makes required
     fields optionalfor PUT requests."""
 
     latitude = serializers.FloatField(required=False)

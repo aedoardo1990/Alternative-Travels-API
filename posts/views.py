@@ -15,8 +15,8 @@ class PostList(generics.ListCreateAPIView):
         permissions.IsAuthenticatedOrReadOnly
     ]
     queryset = Post.objects.annotate(
-        comments_count = Count('comment', distinct=True),
-        likes_count = Count('likes', distinct=True),
+        comments_count=Count('comment', distinct=True),
+        likes_count=Count('likes', distinct=True),
         tags_count=Count("tags", distinct=True),
     ).order_by('-created_at')
     filter_backends = [
@@ -34,7 +34,8 @@ class PostList(generics.ListCreateAPIView):
         'title',
         "tags__name",
     ]
-    # to filter posts 1) user is following, 2) posts user liked, 3) posts owned by a user
+    # to filter posts 1) user is following, 2) posts user liked, 3) posts owned
+    # by a user
     filterset_fields = [
         'owner__followed__owner__profile',
         'likes__owner__profile',
@@ -50,12 +51,13 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     View to check Post Details
     """
     serializer_class = PostDetailSerializer
-    permission_classes = [ IsOwnerOrReadOnly]
+    permission_classes = [IsOwnerOrReadOnly]
     queryset = Post.objects.annotate(
-        comments_count = Count('comment', distinct=True),
-        likes_count = Count('likes', distinct=True),
+        comments_count=Count('comment', distinct=True),
+        likes_count=Count('likes', distinct=True),
         tags_count=Count("tags", distinct=True),
     ).order_by('-created_at')
+
 
 class TagList(generics.ListAPIView):
     """Lists all tags"""
