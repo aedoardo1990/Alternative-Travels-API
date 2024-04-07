@@ -6,7 +6,7 @@ Here below the links to the API and the Frontend:
 
 <strong>Backend</strong>
 
-[Live link](https://alternative-travels-debb28d8ca03.herokuapp.com/)
+💻 [Live link](https://alternative-travels-debb28d8ca03.herokuapp.com/)
 
 <strong>Frontend</strong>
 
@@ -20,6 +20,7 @@ Here below the links to the API and the Frontend:
   - [Features](#features)
   - [Agile Methodologies](#agile-methodologies)
   - [Testing](#testing)
+  - [Bugs](#bugs)
   - [Technologies Used](#technologies-used)
   - [Deployment](#deployment)
   - [Credits](#credits)
