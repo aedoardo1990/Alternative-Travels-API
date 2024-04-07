@@ -451,7 +451,7 @@ Each user story has a level of prioritisation using the MoSCoW method. The 3 dif
 | :---------------------------------: | :------------------------------:|
 | access an API endpoint that allows users to register by providing their username and password. | can register new users with username and password. |
 | have a user profile to be automatically created, when a new user signs up. | have a user profile automatically created if I ll sign up as a new user. |
-| access an API endpoint that allows users to log in, obtain an authentication token, and access user-specific content. | have an API which allow user to access and modify user specific content only when logged in. |
+| access an API endpoint that allows users to log in, obtain an authentication token, and access user-specific content. | have an API which allow users to access and modify user specific content only when logged in. |
 | be able to create, read, update, and delete user profiles via the API. | have full CRUD functionality for user profiles in the API via the Admin Tab. |
 | create, read, update, and delete posts with images about travels. | have full CRUD functionality via the Admin Tab. |
 | uploaded images to not exceed a size format limit. | have a validator which does not allow to upload images exceeding 2MB. |
@@ -461,11 +461,11 @@ Each user story has a level of prioritisation using the MoSCoW method. The 3 dif
 | have access for creating, reading and deleting likes. | have full CRUD for the Likes via the Admin Tab. |
 | be able to create, read, update and delete posts about products to be sold on the marketplace section of the site. | have full CRUD for the posts of the Marketplace via the Admin Tab. |
 | have access for creating, reading, updating, and deleting comments and likes as well under the posts of the marketplace. | have full CRUD for the comments and likes related to the Marketplace model. |
-| have access for creating, reading and deleting follow relationships between users. | have |
-| posts to have a tag field, so that users can tag their created posts. | |
-| display a list of tags of all the users. | |
-| have a functionality for filtering and sorting results, in order to have more control over what data to display to the user. | |
-| have the possibility to add a geolocation for each post so that users can create posts with a geolocation and update it if necessary. | |
+| have access for creating, reading and deleting follow relationships between users. | have full CRUD to manage follow relationships between users via the Admin Tab. |
+| have posts with a tag field, so that users can tag their created posts. | have Posts with a tag field to enter multiple tags. |
+| display a list of tags of all the users. | can access a full list of tags of the users via the Admin tab. |
+| have a functionality for filtering and sorting results, in order to have more control over what data to display to the user. | can filter and sort but just in the User Section of the Admin Tab. This filter function should be implemented as well for all the other models.  |
+| have the possibility to add a geolocation for each post so that users can create posts with a geolocation and update it if necessary. | have a latitude and a longitude fields in the Post model so that users can create posts with their geolocation. |
 
 
 ## Bugs
