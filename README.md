@@ -16,9 +16,12 @@ Here below the links to the API and the Frontend:
 
 ## Table of Contents
   - [User Stories](#user-stories)
+  - [Data Models](#data-models)
+  - [Features](#features)
+  - [Agile Methodologies](#agile-methodologies)
 
 
-### User Stories
+## User Stories
 
 The back-end section of the project focuses on the administration side and covers the user stories from the point of view of a developer and/or superuser. The User Stories are divided into the following categories:
 
@@ -62,7 +65,7 @@ The back-end section of the project focuses on the administration side and cover
 - As a developer I want to have the possibility to add a geolocation for each post so that users can create posts with a geolocation and update it if necessary (valid just for normal Posts and not those in the Marketplace)
 
 
-### Data Models
+## Data Models
 
 I have created the following models for the Alternative Travels API
 
@@ -78,9 +81,215 @@ I have created the following models for the Alternative Travels API
 | Opinions | to make comments about the posts of products on sale |
 | Loves | to like posts of products on sale |
 
+
 The relationships between the models is summarized in the followed entity relationship diagram.
 
 ![Diagram](assets/readme/diagram-database.png)
+
+
+## Features
+
+### Homepage
+
+When you first enter the API website, you are directed to the Root Route homepage, with a welcome message to the API of Alternative Travels.
+
+![homepage](assets/readme/home-root-route.png)
+
+### Profiles Data
+
+In the Profiles section, a user can view a list of all profiles in the API.
+
+![Profile List](assets/readme/profiles.png)
+
+On top of the fields created in the Profiles model (as shown in the Database Diagram), via the Serializer, the following fields are also added to the JSON data:
+- is_owner
+- following_id
+- posts_count
+- followers_count
+- following_count
+
+Create functionality is enabled to the Developer via the Django Admin Tab.
+
+![Admin](assets/readme/admin.png)
+
+I have set up an ordering for the profiles list and selected the following parameters to sort the profiles by:
+- posts_count
+- followers_count
+- following_count
+- owner__following__created_at
+- owner__followed__created_at
+
+I have set up two field filters on the post list to filter as follows:
+
+- owner__following__followed__profile ->  to get all profiles that are following a profile, given its id
+- owner__followed__owner__profile -> to get all profiles that are followed by a profile, given its id
+
+
+### Posts Data
+
+In the Posts section, a user can view a list of all posts in the API.
+
+![Posts](assets/readme/posts.png)
+
+Besides the fields created in the Posts model (as shown in the Database Diagram), via the Serializer, the following fields are also added to the JSON data:
+
+- like_id
+- comments_count
+- likes_count
+- tags_count
+
+I have set up an ordering for the posts list and selected the following parameters to sort the posts by:
+
+- comments_count
+- likes_count
+- likes__created_at
+
+I have set up 3 field filters on the posts list to search by as follows:
+
+- owner__username
+- title
+- tags__name
+
+I have set up 3 field filters on the posts list to filter as follows:
+
+- owner__followed__owner__profile
+- likes__owner__profile
+- owner__profile
+
+CRUD functionality of the Posts is enabled to the Developer/Superuser via the Django Admin Tab.
+
+![Posts Admin](assets/readme/django-admin.png)
+
+### Comments Data
+
+In the Comments section, a user can view a list of all the comments in the API.
+
+![Comments](assets/readme/comments.png)
+
+On top of the fields created in the Comments model (as shown in the Database Diagram), via the Serializer, the following fields are also added to the JSON data:
+
+- is_owner
+- profile_id
+- profile_image
+
+I set up as well one field filter to filter the comments by the post they are commenting.
+
+
+### Likes Data
+
+In the Likes section, a user can view a list of all the liked posts in the API.
+
+![Likes](assets/readme/likes.png)
+
+
+### Marketplace Data
+
+In the Marketplace section, a user can view a list of all the posts of products in the API which are on sale in the Marketplace tab of the frontend.
+
+![Marketplace](assets/readme/likes.png)
+
+Besides the fields created in the Marketplace model (as shown in the Database Diagram), via the Serializer, the following fields are also added to the JSON data:
+
+- love_id
+- opinions_count
+- loves_count
+- is_owner
+- profile_id
+- profile_image
+
+I have set up an ordering for the posts list of the Marketplace and selected the following parameters to sort the posts by:
+
+- opinions_count
+- loves_count
+- loves__created_at
+
+I have set up 3 field filters on the posts list of the Marketplace to search by as follows:
+
+- owner__username
+- title
+- condition
+- price
+
+CRUD functionality of the Posts of the Marketplace is enabled to the Developer/Superuser via the Django Admin Tab.
+
+![Marketplace Admin](assets/readme/marketplace-tab.png)
+
+
+
+### Opinions Data
+
+In the Opinions section, a user can view a list of all the comments related to posts on the Marketplace in the API. The name Opinions was given to differentiate this section from the comments related to the posts with geolocation and tags, but the model is the same of the Comments one. 
+
+![Opinions](assets/readme/opinions.png)
+
+On top of the fields created in the Opinions model (as shown in the Database Diagram), via the Serializer, the following fields are also added to the JSON data:
+
+- is_owner
+- profile_id
+- profile_image
+
+I set up as well one field filter to filter the comments of the Marketplace by the post they are commenting.
+
+
+### Loves Data
+
+In the Loves section, a user can view a list of all the liked posts related to the Marketplace section in the API. The name Loves was given to differentiate this section from the likes related to the posts with geolocation and tags, but the model is the same of the Likes one. 
+
+![Opinions](assets/readme/loves.png)
+
+
+### Followers Data
+
+In the Followers section, a user can view a list of all follower posts in the API.
+
+![Followers](assets/readme/followers.png)
+
+The owner is the user following. In the followed_name field there is the user who is followed by the owner.
+
+
+## Agile Methodologies
+
+### Kanban Board
+
+I used the Kanban Board to build the Alternative Travels API using Agile principles from the start. The user stories created are for a developer or superuser to follow and test throughout the build process. The Agile Principles helped to organise how to build step by step the whole application. 
+
+Each user story has a level of prioritisation using the MoSCoW method. The 3 different levels of prioritization are divided as below:
+- must-have
+- should-have
+- could-have
+
+![Kanban Board img](assets/readme/kanban.png)
+![Issues img](assets/readme/issues.png)
+
+
+<strong>Link to the Kanban Board </strong>
+
+[Kanban Board](https://github.com/users/aedoardo1990/projects/4)
+
+<strong>Link to the issues page</strong>
+
+[Issues Page](https://github.com/aedoardo1990/alternative-travels-api/issues)
+
+
+## Testing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
