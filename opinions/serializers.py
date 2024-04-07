@@ -7,10 +7,10 @@ class OpinionSerializer(serializers.ModelSerializer):
     """
     Serializer for Opinion Model
     """
-    owner = serializers.ReadOnlyField(source = 'owner.username')
+    owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
-    profile_id = serializers.ReadOnlyField(source = 'owner.profile.id')
-    profile_image = serializers.ReadOnlyField(source = 'owner.profile.image.url')
+    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
+    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     created_at = serializers.SerializerMethodField()
     updated_at = serializers.SerializerMethodField()
 
@@ -20,7 +20,7 @@ class OpinionSerializer(serializers.ModelSerializer):
 
     def get_created_at(self, obj):
         return naturaltime(obj.created_at)
-    
+
     def get_updated_at(self, obj):
         return naturaltime(obj.updated_at)
 
@@ -31,10 +31,10 @@ class OpinionSerializer(serializers.ModelSerializer):
             'profile_image', 'marketplace', 'created_at',
             'updated_at', 'content',
         ]
-    
+
 
 class OpinionDetailSerializer(OpinionSerializer):
     """
     Serializer for the Opinion model related to Detail view
     """
-    marketplace = serializers.ReadOnlyField( source = 'marketplace.id')
+    marketplace = serializers.ReadOnlyField(source='marketplace.id')
