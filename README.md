@@ -37,7 +37,7 @@ The back-end section of the project focuses on the administration side and cover
 - As a developer I want to be able to create, read, update, and delete posts with images about travels
 - As a developer I want uploaded images to not exceed a size format limit
 - As a developer I want to be able to create, update and delete post with videos about travels
-- As a developer I want uploaded videos to be automatically converted to a consistent format, trimmed and compressed if they exceed a specific file size
+- As a developer I want uploaded videos to be automatically converted to a consistent format
 
 #### Comments
 - As a developer I want to have access for creating, reading, updating, and deleting comments
@@ -55,7 +55,7 @@ The back-end section of the project focuses on the administration side and cover
 - As a developer I want to have access for creating, reading and deleting follow relationships between users
 
 #### Tags
-- As a developer I want to posts to have a tag field, so that users can tag their created posts (valid just for normal Posts and not those in the Marketplace)
+- As a developer I want posts to have a tag field, so that users can tag their created posts (valid just for normal Posts and not those in the Marketplace)
 - As a developer I want to display a list of tags of all the users
 
 #### Search and Filter
@@ -446,6 +446,26 @@ Each user story has a level of prioritisation using the MoSCoW method. The 3 dif
 
 
 ### User Story Testing
+
+| Expectation (As a developer/superuser, I want to...)  | Result (As a developer/superuser, I...)    |
+| :---------------------------------: | :------------------------------:|
+| access an API endpoint that allows users to register by providing their username and password. | can register new users with username and password. |
+| have a user profile to be automatically created, when a new user signs up. | have a user profile automatically created if I ll sign up as a new user. |
+| access an API endpoint that allows users to log in, obtain an authentication token, and access user-specific content. | have an API which allow user to access and modify user specific content only when logged in. |
+| be able to create, read, update, and delete user profiles via the API. | have full CRUD functionality for user profiles in the API via the Admin Tab. |
+| create, read, update, and delete posts with images about travels. | have full CRUD functionality via the Admin Tab. |
+| uploaded images to not exceed a size format limit. | have a validator which does not allow to upload images exceeding 2MB. |
+| be able to create, update and delete post with videos about travels. | have a validator which does not allow to upload videos exceeding 60MB. |
+| uploaded videos to be automatically converted to a consistent format | have videos with a fitting format when they are uploaded if they do not exceed 60 MB. |
+| have access for creating, reading, updating, and deleting comments. | have full CRUD functionality for the Comments via the Admin Tab. |
+| have access for creating, reading and deleting likes. | have full CRUD for the Likes via the Admin Tab. |
+| be able to create, read, update and delete posts about products to be sold on the marketplace section of the site. | have full CRUD for the posts of the Marketplace via the Admin Tab. |
+| have access for creating, reading, updating, and deleting comments and likes as well under the posts of the marketplace. | have full CRUD for the comments and likes related to the Marketplace model. |
+| have access for creating, reading and deleting follow relationships between users. | have |
+| posts to have a tag field, so that users can tag their created posts. | |
+| display a list of tags of all the users. | |
+| have a functionality for filtering and sorting results, in order to have more control over what data to display to the user. | |
+| have the possibility to add a geolocation for each post so that users can create posts with a geolocation and update it if necessary. | |
 
 
 ## Bugs
