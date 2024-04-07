@@ -186,7 +186,7 @@ In the Likes section, a user can view a list of all the liked posts in the API.
 
 In the Marketplace section, a user can view a list of all the posts of products in the API which are on sale in the Marketplace tab of the frontend.
 
-![Marketplace](assets/readme/likes.png)
+![Marketplace](assets/readme/marketplace.png)
 
 Besides the fields created in the Marketplace model (as shown in the Database Diagram), via the Serializer, the following fields are also added to the JSON data:
 
