@@ -13,9 +13,9 @@ class ProfileList(generics.ListCreateAPIView):
     serializer_class = ProfileSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Profile.objects.annotate(
-        posts_count = Count('owner__post', distinct=True),
-        followers_count = Count('owner__followed', distinct=True),
-        following_count = Count('owner__following', distinct=True)
+        posts_count=Count('owner__post', distinct=True),
+        followers_count=Count('owner__followed', distinct=True),
+        following_count=Count('owner__following', distinct=True)
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
@@ -34,7 +34,7 @@ class ProfileList(generics.ListCreateAPIView):
         # to get all profiles that are followed by a profile, given its id
         'owner__followed__owner__profile'
     ]
-    
+
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
     """
@@ -43,7 +43,7 @@ class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = ProfileSerializer
     queryset = Profile.objects.annotate(
-        posts_count = Count('owner__post', distinct=True),
-        followers_count = Count('owner__followed', distinct=True),
-        following_count = Count('owner__following', distinct=True)
+        posts_count=Count('owner__post', distinct=True),
+        followers_count=Count('owner__followed', distinct=True),
+        following_count=Count('owner__following', distinct=True)
     ).order_by('-created_at')
