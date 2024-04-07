@@ -5,6 +5,7 @@ from drf_api.permissions import IsOwnerOrReadOnly
 from .models import Marketplace
 from .serializers import MarketplaceSerializer
 
+
 class MarketplaceList(generics.ListCreateAPIView):
     """
     View to list posts on Marketplace
@@ -14,8 +15,8 @@ class MarketplaceList(generics.ListCreateAPIView):
         permissions.IsAuthenticatedOrReadOnly
     ]
     queryset = Marketplace.objects.annotate(
-        opinions_count = Count('opinion', distinct=True),
-        loves_count = Count('loves', distinct=True),
+        opinions_count=Count('opinion', distinct=True),
+        loves_count=Count('loves', distinct=True),
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
@@ -37,13 +38,14 @@ class MarketplaceList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
 class MarketplaceDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     View to check details of a post on Marketplace
     """
     serializer_class = MarketplaceSerializer
-    permission_classes = [ IsOwnerOrReadOnly]
+    permission_classes = [IsOwnerOrReadOnly]
     queryset = Marketplace.objects.annotate(
-        opinions_count = Count('opinion', distinct=True),
-        loves_count = Count('loves', distinct=True),
+        opinions_count=Count('opinion', distinct=True),
+        loves_count=Count('loves', distinct=True),
     ).order_by('-created_at')
