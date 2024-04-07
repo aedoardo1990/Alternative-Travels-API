@@ -32,7 +32,7 @@ REST_FRAMEWORK = {
         if 'DEV' in os.environ
         else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
     )],
-    # to define pagination and format date time in created_at, updated_at fields
+    # to define pagination and format date time in created_at,updated_at fields
     'DEFAULT_PAGINATION_CLASS':
     'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
@@ -61,8 +61,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOSTS'),
     '.gitpod.io',
-   'localhost',
-]
+    'localhost',
+    ]
 
 
 # Application definition
