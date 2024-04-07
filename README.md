@@ -273,6 +273,183 @@ Each user story has a level of prioritisation using the MoSCoW method. The 3 dif
 
 ## Testing
 
+### PEP 8 Linter
+
+<details>
+
+<summary>Only a few errors found in the pages of the drf_api folder in settings.py file. These are related to the code provided by CI and I preferred to not touch it to avoid causing any error. For all the other apps no errors were found</summary>
+
+#### DRF_API
+- permissions.py
+![PEP8 Validation](assets/readme/permiss-set.png)
+
+- serializers.py 
+![PEP8 Validation](assets/readme/serial-set.png)
+
+- settings.py
+![PEP8 Validation](assets/readme/settings-set.png)
+
+- views.py
+![PEP8 Validation](assets/readme/views-set.png)
+
+- urls.py
+![PEP8 Validation](assets/readme/urls-set.png)
+
+
+#### COMMENTS
+- apps.py
+![PEP8 Validation](assets/readme/apps-comment.png)
+
+- serializers.py 
+![PEP8 Validation](assets/readme/serializers-comments.png)
+
+- models.py
+![PEP8 Validation](assets/readme/models-comments.png)
+
+- views.py
+![PEP8 Validation](assets/readme/views-comments.png)
+
+- urls.py
+![PEP8 Validation](assets/readme/urls-comments.png)
+
+
+#### FOLLOWERS
+- apps.py
+![PEP8 Validation](assets/readme/apps-follow.png)
+
+- serializers.py 
+![PEP8 Validation](assets/readme/serializers-follow.png)
+
+- models.py
+![PEP8 Validation](assets/readme/models-folllow.png)
+
+- views.py
+![PEP8 Validation](assets/readme/views-follow.png)
+
+- urls.py
+![PEP8 Validation](assets/readme/urls-follow.png)
+
+
+#### LIKES
+- apps.py
+![PEP8 Validation](assets/readme/likes-apps)
+
+- serializers.py 
+![PEP8 Validation](assets/readme/serializers-likes.png)
+
+- models.py
+![PEP8 Validation](assets/readme/likes-models.png)
+
+- views.py
+![PEP8 Validation](assets/readme/likes-views.png)
+
+- urls.py
+![PEP8 Validation](assets/readme/likes-urls.png)
+
+
+#### LOVES
+- apps.py
+![PEP8 Validation](assets/readme/apps-loves.png)
+
+- serializers.py 
+![PEP8 Validation](assets/readme/serial-loves.png)
+
+- models.py
+![PEP8 Validation](assets/readme/models-loves.png)
+
+- views.py
+![PEP8 Validation](assets/readme/views-loves.png)
+
+- urls.py
+![PEP8 Validation](assets/readme/urls-loves.png)
+
+
+#### MARKETPLACE
+- admin.py
+![PEP8 Validation](assets/readme/admin-market.png)
+
+- apps.py
+![PEP8 Validation](assets/readme/apps-market.png)
+
+- serializers.py 
+![PEP8 Validation](assets/readme/serial-market.png)
+
+- models.py
+![PEP8 Validation](assets/readme/models-market.png)
+
+- views.py
+![PEP8 Validation](assets/readme/views-market.png)
+
+- urls.py
+![PEP8 Validation](assets/readme/urls-market.png)
+
+
+#### OPINIONS
+- apps.py
+![PEP8 Validation](assets/readme/apps-opinion.png)
+
+- serializers.py 
+![PEP8 Validation](assets/readme/serial-op.png)
+
+- models.py
+![PEP8 Validation](assets/readme/models-op.png)
+
+- views.py
+![PEP8 Validation](assets/readme/views-op.png)
+
+- urls.py
+![PEP8 Validation](assets/readme/urls-op.png)
+
+
+#### POSTS
+- admin.py
+![PEP8 Validation](assets/readme/admin-post.png)
+
+- apps.py
+![PEP8 Validation](assets/readme/apps-post.png)
+
+- serializers.py 
+![PEP8 Validation](assets/readme/serial-posts.png)
+
+- models.py
+![PEP8 Validation](assets/readme/models-posts.png)
+
+- tests.py
+![PEP8 Validation](assets/readme/tests-post.png)
+
+- views.py
+![PEP8 Validation](assets/readme/views-post.png)
+
+- urls.py
+![PEP8 Validation](assets/readme/urls-posts.png)
+
+
+#### PROFILES
+
+- apps.py
+![PEP8 Validation](assets/readme/apps-pro.png)
+
+- serializers.py 
+![PEP8 Validation](assets/readme/serial-pro.png)
+
+- models.py
+![PEP8 Validation](assets/readme/models-pro.png)
+
+- views.py
+![PEP8 Validation](assets/readme/views-pro.png)
+
+- urls.py
+![PEP8 Validation](assets/readme/urls-pro.png)
+
+
+</details>
+
+
+### User Story Testing
+
+
+## Bugs
+
 
 
 
